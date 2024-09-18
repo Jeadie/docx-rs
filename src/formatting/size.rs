@@ -9,7 +9,7 @@ use crate::__xml_test_suites;
 ///
 /// let sz = Size::from(42usize);
 /// ```
-#[derive(Debug, XmlRead, XmlWrite)]
+#[derive(Clone, Debug, XmlRead, XmlWrite)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:sz")]
 pub struct Size {

@@ -25,7 +25,7 @@ use crate::{
 ///     .underline("00ff00")
 ///     .underline(("ff0000", UnderlineStyle::Dash));
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Clone, Debug, Default, XmlRead, XmlWrite)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:rPr")]
 pub struct CharacterProperty<'a> {
@@ -70,7 +70,7 @@ impl<'a> CharacterProperty<'a> {
     __setter!(underline: Option<Underline<'a>>);
 }
 
-#[derive(Debug, XmlRead, XmlWrite)]
+#[derive(Clone, Debug, XmlRead, XmlWrite)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:rStyle")]
 pub struct CharacterStyleId<'a> {

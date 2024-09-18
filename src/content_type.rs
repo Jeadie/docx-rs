@@ -18,7 +18,7 @@ const CONTENT_TYPE_DOCUMENT: &str =
 const CONTENT_TYPE_STYLES: &str =
     "application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml";
 
-#[derive(Debug, XmlRead)]
+#[derive(Clone, Debug, XmlRead)]
 #[xml(tag = "Types")]
 pub struct ContentTypes<'a> {
     #[xml(child = "Default")]
@@ -94,7 +94,7 @@ impl<'a> XmlWrite for ContentTypes<'a> {
     }
 }
 
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Clone, Debug, Default, XmlRead, XmlWrite)]
 #[xml(tag = "Default")]
 pub struct DefaultContentType<'a> {
     #[xml(attr = "Extension")]
@@ -103,7 +103,7 @@ pub struct DefaultContentType<'a> {
     pub ty: Cow<'a, str>,
 }
 
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Clone, Debug, Default, XmlRead, XmlWrite)]
 #[xml(tag = "Override")]
 pub struct OverrideContentType<'a> {
     #[xml(attr = "PartName")]

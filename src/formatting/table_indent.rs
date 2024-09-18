@@ -11,7 +11,7 @@ use crate::{__string_enum, __xml_test_suites};
 /// let ind = TableIndent::from(TableIndentUnit::Pct);
 /// let ind = TableIndent::from((42, TableIndentUnit::Dxa));
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Clone, Debug, Default, XmlRead, XmlWrite)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:tblInd")]
 pub struct TableIndent {
@@ -48,7 +48,7 @@ impl From<(usize, TableIndentUnit)> for TableIndent {
     }
 }
 
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 #[cfg_attr(test, derive(PartialEq))]
 pub enum TableIndentUnit {
     Auto,

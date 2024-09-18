@@ -16,7 +16,7 @@ use crate::{__setter, __xml_test_suites, document::TableCell, formatting::TableR
 ///             .property(TableCellProperty::default())
 ///     );
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Clone, Debug, Default, XmlRead, XmlWrite)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:tr")]
 pub struct TableRow<'a> {

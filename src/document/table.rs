@@ -18,7 +18,7 @@ use crate::{
 ///     .push_grid(TableGrid::default())
 ///     .push_row(TableRow::default());
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Clone, Debug, Default, XmlRead, XmlWrite)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:tbl")]
 pub struct Table<'a> {

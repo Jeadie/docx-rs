@@ -24,7 +24,7 @@ use crate::schema::{SCHEMA_MAIN, SCHEMA_RELATIONSHIPS};
 ///     .push_font("Arial")
 ///     .push_font(Font::new("Helvetica").family("swiss"));
 /// ```
-#[derive(Debug, Default, XmlRead)]
+#[derive(Clone, Debug, Default, XmlRead)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:fonts")]
 pub struct FontTable<'a> {

@@ -24,7 +24,7 @@ use crate::schema::SCHEMA_MAIN;
 ///     .default(DefaultStyle::default())
 ///     .push(Style::new(StyleType::Paragraph, "style_id"));
 /// ```
-#[derive(Debug, Default, XmlRead)]
+#[derive(Clone, Debug, Default, XmlRead)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:styles")]
 pub struct Styles<'a> {

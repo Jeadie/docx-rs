@@ -10,7 +10,7 @@ use crate::{__setter, __xml_test_suites, formatting::TableJustification};
 /// let prop = TableRowProperty::default()
 ///     .justification(TableJustificationVal::Start);
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Clone, Debug, Default, XmlRead, XmlWrite)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:trPr")]
 pub struct TableRowProperty {

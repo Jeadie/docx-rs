@@ -16,7 +16,7 @@ use crate::{
 ///     .family("swiss")
 ///     .pitch("variable");
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Clone, Debug, Default, XmlRead, XmlWrite)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:font")]
 pub struct Font<'a> {

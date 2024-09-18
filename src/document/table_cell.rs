@@ -14,7 +14,7 @@ use crate::{__setter, __xml_test_suites, document::Paragraph, formatting::TableC
 /// let cell = TableCell::pargraph(Paragraph::default())
 ///     .property(TableCellProperty::default());
 /// ```
-#[derive(Debug, XmlRead, XmlWrite)]
+#[derive(Clone, Debug, XmlRead, XmlWrite)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:tc")]
 pub struct TableCell<'a> {
@@ -44,7 +44,7 @@ impl<'a, T: Into<TableCellContent<'a>>> From<T> for TableCell<'a> {
     }
 }
 
-#[derive(Debug, From, XmlRead, XmlWrite)]
+#[derive(Clone, Debug, From, XmlRead, XmlWrite)]
 #[cfg_attr(test, derive(PartialEq))]
 pub enum TableCellContent<'a> {
     #[xml(tag = "w:p")]

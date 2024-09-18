@@ -15,7 +15,7 @@ use crate::__xml_test_suites;
 /// let color = Color::from(0u32); // "000000"
 /// let color = Color::from((0u8, 0u8, 0u8)); // "000000"
 /// ```
-#[derive(Debug, Default, XmlRead, XmlWrite)]
+#[derive(Clone, Debug, Default, XmlRead, XmlWrite)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:color")]
 pub struct Color<'a> {
